@@ -1,12 +1,19 @@
-import express from 'express';
-import { userLogin, userSignup } from '../Controllers/userController.js';
+import express from "express";
+import {
+  testRoute,
+  userLogin,
+  userSignup,
+} from "../Controllers/userController.js";
 
 const router = express.Router();
 
+//test route
+router.get("/", testRoute);
+
 // signup
-router.get('/signup',userSignup);
+router.post("/signup", userSignup);
 
 //login
-router.get('/signup',userLogin);
+router.post("/login", userLogin);
 
-export {router as userRoutes};
+export { router as userRoutes };
